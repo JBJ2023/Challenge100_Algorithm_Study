@@ -5,7 +5,7 @@ import java.util.*;
 class PGS_영어끝말잇기 {
     public int[] solution(int n, String[] words) {
         int[] answer = {0,0};
-        ArrayList<String> list= new ArrayLisat<>();
+        ArrayList<String> list= new ArrayList<>();
         
         list.add(words[0]);
         int i;
