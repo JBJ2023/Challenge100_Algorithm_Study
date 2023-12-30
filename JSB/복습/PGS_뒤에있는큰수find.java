@@ -1,6 +1,6 @@
-package JSB;
+package JSB.복습;
 import java.util.*;
-public class PGS_광물캐기 {
+public class PGS_뒤에있는큰수find {
     class Solution {
         public int[] solution(int[] numbers) {
             int[] answer = new int[numbers.length];
@@ -20,5 +20,4 @@ public class PGS_광물캐기 {
             return answer;
         }
     }
-
 }
