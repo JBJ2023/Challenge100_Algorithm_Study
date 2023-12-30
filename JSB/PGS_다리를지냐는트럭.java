@@ -1,7 +1,8 @@
 package JSB;
 
 import java.util.LinkedList;
-import java.util.Queue;ㅑmport java.util.*;
+import java.util.Queue;
+import java.util.*;
 public class PGS_다리를지냐는트럭 {
     class Solution {
         public int solution(int bridge_length, int weight, int[] truck_weights) {
