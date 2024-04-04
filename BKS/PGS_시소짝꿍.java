@@ -5,15 +5,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PGS_시소짝꿍 {
+    // 20240402 19:10 ~ 19:35 (복습)
+    // 20240403 18:53 ~ 19:06 (복습)
     public static void main(String[] args) {
         long answer = 0;
         int[] weights = {100, 180, 360, 100, 270};
-        // 1. 큰 수 중에 만들 수 있는 작은 수를 찾기 위해 오름차순 정렬한다.
+        // 0. 어쨌든 같은 거리에 있는 것만 확인되면 쌍으로 인정된다.
+
+        // 1. weights을 오름차순으로 정렬하여 작은 수들과 같은 값이 되는지 확인한다.
         Arrays.sort(weights);
+
+        // 2. 나누었을 때 소수가 될 수 있으므로 Double, Integer 타입으로 선언한다.
         Map<Double, Integer> map = new HashMap<>();
 
         for (int w : weights) {
-            // 2. 정렬된 수를 하나씩 뽑으며 이전의 작은 값을 만들 수 있는 경우를 찾는다.
+            // 3. 큰 수가 작아질 수 있는 경우를 모두 확인한다.
             double a = w * 1.0;
             double b = (w * 2.0) / 3.0;
             double c = (w * 1.0) / 2.0;
@@ -24,9 +30,7 @@ public class PGS_시소짝꿍 {
             if (map.containsKey(c)) answer += map.get(c);
             if (map.containsKey(d)) answer += map.get(d);
 
-            // 3. map에 작은 수를 하나씩 담는다.
-            //    이때, 동일한 숫자가 존재하고 동일하면 기존 개수에 1을 추가한다.
-            map.put((w * 1.0), map.getOrDefault((w * 1.0), 0) + 1);
+            map.put(a, map.getOrDefault(a, 0) + 1);
         }
         System.out.println(answer);
     }
